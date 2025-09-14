@@ -1,0 +1,16 @@
+/* Base edit icon styles */
+.edit-icon {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    color: #666;
+    margin-left: 4px;
+    font-size: 20px;
+}
+
+.edit-icon:hover {
+    opacity: 1;
+    color: #333;
+    transform: scale(1.1);
+}
+

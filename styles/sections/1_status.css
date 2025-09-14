@@ -1,12 +1,4 @@
 /* Status bar, buttons, badge styles */
-.status-display {
-    padding: 5px 15px;
-    border-radius: 20px;
-    background-color: #f0f0f0;
-    font-weight: 500;
-    font-size: 1.1em;
-}
-
 .status-section {
     margin-bottom: 30px;
 }

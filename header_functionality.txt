@@ -2,3 +2,18 @@ edit icon precedes <h1>Remediate Now Submission</h1>
 submission-status-display is in line with <h1>Remediate Now Submission</h1>
 clicking edit button pops up modal to rename it.
 
+.header-edit-icon {
+    cursor: pointer;
+    opacity: 0.7;
+    font-size: 28px;
+    transition: all 0.2s ease;
+    color: #666;
+    margin-right: 8px;
+}
+
+.header-edit-icon:hover {
+    opacity: 1;
+    color: #333;
+    transform: scale(1.1);
+}
+

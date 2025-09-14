@@ -16,21 +16,32 @@
     gap: 10px;
 }
 
+.submission-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+/* Header edit icon - inherits from .edit-icon base styles */
 .header-edit-icon {
+    /* Inherit all .edit-icon base styles */
     cursor: pointer;
-    opacity: 0.6;
-    font-size: 18px;
-    transition: opacity 0.2s ease;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    color: #666;
+    
+    /* Override specific properties for header */
+    font-size: 28px;
+    margin-left: 0;
+    margin-right: 8px;
 }
 
 .header-edit-icon:hover {
     opacity: 1;
+    color: #333;
+    transform: scale(1.1);
 }
 
-.header {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
 
