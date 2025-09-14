@@ -1,0 +1,9 @@
+:root {
+    --status-triage: #FFD700;              /* bright yellow (Gold) */
+    --status-monitor: #FF9800;             /* orange */
+    --status-de-escalated: #7CB342;        /* light green */
+    --status-de-escalated-critical: #9C27B0;/* purple */
+    --status-remediate-now: #F44336;       /* red */
+    --status-remediated: #2E7D32;          /* darker green */
+    --status-closed: #4B515D;              /* gray (unchanged) */
+}

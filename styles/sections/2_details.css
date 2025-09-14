@@ -1,0 +1,50 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.timestamp-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timestamp-label {
+    font-weight: bold;
+}
+
+.timestamp {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    color: #666;
+}
+
+.inline-fields-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.field-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 200px;
+}
+
+.field-label {
+    font-weight: bold;
+    min-width: fit-content;
+}
+
+.field-value {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    color: #666;
+    position: relative;
+}
+
+/* Clicking Slack, Jira, SIR fields opens relevant links */
+.field-value.clickable {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0066cc;
+}

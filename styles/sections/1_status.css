@@ -1,0 +1,49 @@
+/* Status bar, buttons, badge styles */
+.status-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.status-section {
+    margin-bottom: 30px;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-header h2 {
+    margin: 0;
+    min-width: fit-content;
+}
+
+.status-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.status-button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.status-button:hover {
+    background-color: #f0f0f0;
+}
+
+.status-button.active {
+    background-color: #666666;
+    color: white;
+    border-color: #555555;
+}

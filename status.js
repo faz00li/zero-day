@@ -1,11 +1,4 @@
-// Format date to YYYY-MM-DD HH:00 format
-function formatDate(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    const hours = String(date.getHours()).padStart(2, '0');
-    return `${year}-${month}-${day} ${hours}:00`;
-}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Set creation date
@@ -19,16 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const statusDisplay = document.getElementById('current-status-display');
     const currentStatusInput = document.getElementById('current-status');
 
-    // Status colors mapping
-    const statusColors = {
-        'triage': '#FFD700',          // bright yellow (Gold)
-        'monitor': '#FF9800',         // orange
-        'de-escalated': '#7CB342',    // light green
-        'de-escalated-critical': '#9C27B0', // purple
-        'remediate-now': '#F44336',   // red
-        'remediated': '#2E7D32',      // darker green
-        'closed': '#4B515D'           // gray (unchanged)
-    };
+    
 
     // Add click event listener to each button
     statusButtons.forEach(button => {
