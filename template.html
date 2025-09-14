@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remediate Now Submission</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Base styles first -->
+    <link rel="stylesheet" href="styles/base/variables.css">
+    <link rel="stylesheet" href="styles/base/common.css">
+    
+    <!-- Component styles -->
+    <link rel="stylesheet" href="styles/components/0_modals.css">
+    
+    <!-- Section styles -->
+    <link rel="stylesheet" href="styles/sections/0_header.css">
+    <link rel="stylesheet" href="styles/sections/1_status.css">
+    <link rel="stylesheet" href="styles/sections/2_details.css">
+    <link rel="stylesheet" href="styles/sections/3_criteria.css">
+    <link rel="stylesheet" href="styles/sections/4_assessment.css">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1>Remediate Now Submission</h1>
+            <h1><span class="header-edit-icon" title="Edit submission title">✎</span>Remediate Now Submission</h1>
             <span id="submission-status-display" class="status-display">Triage</span>
         </div>
     </header>
@@ -31,7 +44,7 @@
     </section>
 
     <!-- Submission Header Section -->
-    <section id="submission-header" class="submission-header">
+    <section id="header" class="header">
         <h2>Submission Details</h2>
         
         <div class="form-group timestamp-group">
@@ -120,7 +133,6 @@
         <!-- Parts A through F will be added here in subsequent updates -->
     </section>
 
-    <script src="status.js"></script>
-    <script src="edit.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
