@@ -1,0 +1,2 @@
+edit icon precedes <h1>Remediate Now Submission</h1>
+submission-status-display is in line with <h1>Remediate Now Submission</h1>

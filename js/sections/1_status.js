@@ -1,6 +1,6 @@
   // Get all status buttons and status display element
     const statusButtons = document.querySelectorAll('.status-button');
-    const statusDisplay = document.getElementById('current-status-display');
+    const statusDisplay = document.getElementById('submission-status-display');
     const currentStatusInput = document.getElementById('current-status');
 
     
