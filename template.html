@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remediate Now Submission</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Remediate Now Submission</h1>
+            <span id="current-status-display" class="status-badge">Triage</span>
+        </div>
+    </header>
+
+    <!-- Status Tracking Section -->
+    <section id="status-tracking" class="status-section">
+        <div class="status-header">
+            <h2>Update Status</h2>
+            <div class="status-bar">
+                <button class="status-button" data-status="triage">Triage</button>
+                <button class="status-button" data-status="monitor">Monitor</button>
+                <button class="status-button" data-status="remediate-now">Remediate Now</button>
+                <button class="status-button" data-status="de-escalated">De-Escalated</button>
+                <button class="status-button" data-status="remediated">Remediated</button>
+                <button class="status-button" data-status="de-escalated-critical">De-Escalated Critical</button>
+                <button class="status-button" data-status="closed">Closed</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submission Header Section -->
+    <section id="submission-header" class="submission-header">
+        <h2>Submission Details</h2>
+        
+        <div class="form-group timestamp-group">
+            <!-- TODO: Update this to store creation timestamp in database and retrieve on load -->
+            <span class="timestamp-label">Created:</span>
+            <span id="created-date" class="timestamp"></span>
+        </div>
+
+        <div class="inline-fields-container">
+            <div class="field-group">
+                <span class="field-label">Highest CVSS:</span>
+                <span id="cvss-value" class="field-value">-
+                    <span class="edit-icon" title="Edit CVSS">✎</span>
+                </span>
+            </div>
+
+            <div class="field-group">
+                <!-- TODO: Implement Slack link navigation when clicked -->
+                <span class="field-label">Slack</span>
+                <span id="slack-value" class="field-value">-
+                    <span class="edit-icon" title="Edit Slack Link">✎</span>
+                </span>
+            </div>
+
+            <div class="field-group">
+                <!-- TODO: Implement Jira ticket navigation when clicked -->
+                <span class="field-label">Jira</span>
+                <span id="jira-value" class="field-value">-
+                    <span class="edit-icon" title="Edit Jira Reference">✎</span>
+                </span>
+            </div>
+
+            <div class="field-group">
+                <!-- TODO: Implement Security Incident Report navigation when clicked -->
+                <span class="field-label">SIR</span>
+                <span id="sir-value" class="field-value">-
+                    <span class="edit-icon" title="Edit SIR Reference">✎</span>
+                </span>
+            </div>
+
+            <div class="field-group">
+                <span class="field-label">Est. Time To Complete:</span>
+                <span id="estimated-time-value" class="field-value">-
+                    <span class="edit-icon" title="Edit Estimated Time">✎</span>
+                </span>
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="cve-reference">CVEs & Reference:</label>
+            <textarea id="cve-reference" name="cve-reference" placeholder="Enter CVE IDs and references"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="summary">Summary:</label>
+            <textarea id="summary" name="summary" placeholder="Provide a brief summary of the issue"></textarea>
+        </div>
+        
+
+        
+
+        <!-- Remediate Now Criteria Section -->
+        <div class="criteria-section">
+            <h3>Remediate Now Criteria</h3>
+            <div class="form-group">
+                <h4>Presence Indicators</h4>
+                <label><input type="checkbox" name="criteria-under-attack"> Under Attack</label>
+                <label><input type="checkbox" name="criteria-vulnerability-present"> Vulnerability Present</label>
+            </div>
+
+            <div class="form-group">
+                <h4>Exploitability Indicators</h4>
+                <label><input type="checkbox" name="criteria-public-exploit"> Public Exploit</label>
+                <label><input type="checkbox" name="criteria-low-complexity"> Low Complexity</label>
+                <label><input type="checkbox" name="criteria-widely-exploited"> Widely Exploited</label>
+                <label><input type="checkbox" name="criteria-unauthenticated"> Unauthenticated</label>
+                <label><input type="checkbox" name="criteria-remote-code-execution"> Remote Code Execution</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder for main assessment parts - to be added later -->
+    <section id="main-assessment">
+        <h2>Assessment Sections</h2>
+        <!-- Parts A through F will be added here in subsequent updates -->
+    </section>
+
+    <script src="status.js"></script>
+    <script src="edit.js"></script>
+</body>
+</html>
