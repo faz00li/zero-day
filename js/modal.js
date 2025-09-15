@@ -58,8 +58,8 @@ function getCurrentValue(target) {
         return textarea.value.trim();
     }
     
-    // Find the closest placeholder span - works for other editable fields
-    const placeholder = target.closest('.field-group, h1')?.querySelector('.placeholder');
+    // Find the closest placeholder span - works for all editable fields
+    const placeholder = target.closest('.field-group, .timestamp-group, h1')?.querySelector('.placeholder');
     return placeholder ? placeholder.textContent.trim() : '';
 }
 
@@ -81,7 +81,7 @@ function updateValue() {
     }
 
     // Find the placeholder span and update it
-    const placeholder = currentTarget.closest('.field-group, h1')?.querySelector('.placeholder');
+    const placeholder = currentTarget.closest('.field-group, .timestamp-group, h1')?.querySelector('.placeholder');
     if (placeholder) {
         placeholder.textContent = newValue;
         
