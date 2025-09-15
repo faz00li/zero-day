@@ -24,7 +24,7 @@
     <!-- Submission title and status -->
     <header>
         <div class="header-container">
-            <h1><span class="edit-icon header-edit-icon" title="Edit submission title">✎</span>Remediate Now Submission <span id="submission-status-display" class="submission-status">Triage</span></h1>
+            <h1><span class="edit-icon header-edit-icon" title="Edit submission title">✎</span><span id="submission-title" class="placeholder">Remediate Now Submission</span> <span id="submission-status-display" class="submission-status">Triage</span></h1>
         </div>
     </header>
 
@@ -58,7 +58,8 @@
         <div class="inline-fields-container">
             <div class="field-group">
                 <span class="field-label">Highest CVSS:</span>
-                <span id="cvss-value" class="field-value">-
+                <span id="cvss-value" class="field-value">
+                    <span class="placeholder">-</span>
                     <span class="edit-icon" title="Edit CVSS">✎</span>
                 </span>
             </div>
@@ -66,7 +67,8 @@
             <div class="field-group">
                 <!-- TODO: Implement Slack link navigation when clicked -->
                 <span class="field-label">Slack</span>
-                <span id="slack-value" class="field-value">-
+                <span id="slack-value" class="field-value">
+                    <span class="placeholder">-</span>
                     <span class="edit-icon" title="Edit Slack Link">✎</span>
                 </span>
             </div>
@@ -74,7 +76,8 @@
             <div class="field-group">
                 <!-- TODO: Implement Jira ticket navigation when clicked -->
                 <span class="field-label">Jira</span>
-                <span id="jira-value" class="field-value">-
+                <span id="jira-value" class="field-value">
+                    <span class="placeholder">-</span>
                     <span class="edit-icon" title="Edit Jira Reference">✎</span>
                 </span>
             </div>
@@ -82,14 +85,16 @@
             <div class="field-group">
                 <!-- TODO: Implement Security Incident Report navigation when clicked -->
                 <span class="field-label">SIR</span>
-                <span id="sir-value" class="field-value">-
+                <span id="sir-value" class="field-value">
+                    <span class="placeholder">-</span>
                     <span class="edit-icon" title="Edit SIR Reference">✎</span>
                 </span>
             </div>
 
             <div class="field-group">
                 <span class="field-label">Est. Time To Complete:</span>
-                <span id="estimated-time-value" class="field-value">-
+                <span id="estimated-time-value" class="field-value">
+                    <span class="placeholder">-</span>
                     <span class="edit-icon" title="Edit Estimated Time">✎</span>
                 </span>
             </div>
@@ -97,12 +102,12 @@
 
         
         <div class="form-group">
-            <label for="cve-reference">CVEs & Reference:</label>
+            <label for="cve-reference">CVEs & Reference: <span class="edit-icon" title="Edit CVEs & Reference">✎</span></label>
             <textarea id="cve-reference" name="cve-reference" placeholder="Enter CVE IDs and references"></textarea>
         </div>
         
         <div class="form-group">
-            <label for="summary">Summary:</label>
+            <label for="summary">Summary: <span class="edit-icon" title="Edit Summary">✎</span></label>
             <textarea id="summary" name="summary" placeholder="Provide a brief summary of the issue"></textarea>
         </div>
         

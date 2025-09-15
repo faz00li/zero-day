@@ -1,4 +1,3 @@
-// Simple functional modal for edit icons - no modules, no OOP
 let modalOverlay = null;
 let currentTarget = null;
 
@@ -53,25 +52,15 @@ function closeModal() {
 
 // Get current value from target element
 function getCurrentValue(target) {
-    // For header edit icon (title editing)
-    if (target.classList.contains('header-edit-icon')) {
-        const h1 = target.closest('h1');
-        const titleText = h1.textContent.replace('✎', '').trim();
-        // Remove the status text at the end
-        const statusElement = h1.querySelector('#submission-status-display');
-        if (statusElement) {
-            return titleText.replace(statusElement.textContent.trim(), '').trim();
-        }
-        return titleText;
+    // Check if we're editing a textarea
+    const textarea = target.closest('.form-group')?.querySelector('textarea');
+    if (textarea) {
+        return textarea.value.trim();
     }
-
-    // For field edit icons
-    const fieldValue = target.closest('.field-group')?.querySelector('.field-value');
-    if (fieldValue) {
-        return fieldValue.textContent.replace('✎', '').trim();
-    }
-
-    return '';
+    
+    // Find the closest placeholder span - works for other editable fields
+    const placeholder = target.closest('.field-group, h1')?.querySelector('.placeholder');
+    return placeholder ? placeholder.textContent.trim() : '';
 }
 
 // Update value
@@ -83,41 +72,26 @@ function updateValue() {
         return;
     }
 
-    // Update the target element
-    if (currentTarget.classList.contains('header-edit-icon')) {
-        updateHeaderTitle(newValue);
-    } else {
-        updateFieldValue(newValue);
+    // Check if we're updating a textarea
+    const textarea = currentTarget.closest('.form-group')?.querySelector('textarea');
+    if (textarea) {
+        textarea.value = newValue;
+        closeModal();
+        return;
+    }
+
+    // Find the placeholder span and update it
+    const placeholder = currentTarget.closest('.field-group, h1')?.querySelector('.placeholder');
+    if (placeholder) {
+        placeholder.textContent = newValue;
+        
+        // If it's the header title, also update page title
+        if (currentTarget.classList.contains('header-edit-icon')) {
+            document.title = newValue;
+        }
     }
 
     closeModal();
-}
-
-// Update header title
-function updateHeaderTitle(newTitle) {
-    const h1 = currentTarget.closest('h1');
-    const statusElement = h1.querySelector('#submission-status-display');
-    const editIcon = h1.querySelector('.header-edit-icon');
-    
-    // Clear h1 and rebuild with new title
-    h1.innerHTML = '';
-    h1.appendChild(editIcon);
-    h1.appendChild(document.createTextNode(newTitle + ' '));
-    h1.appendChild(statusElement);
-
-    // Also update page title
-    document.title = newTitle;
-}
-
-// Update field value
-function updateFieldValue(newValue) {
-    const fieldValue = currentTarget.closest('.field-group')?.querySelector('.field-value');
-    if (fieldValue) {
-        // Preserve the edit icon
-        const editIcon = fieldValue.querySelector('.edit-icon');
-        fieldValue.textContent = newValue;
-        fieldValue.appendChild(editIcon);
-    }
 }
 
 // Initialize modal when DOM is ready
