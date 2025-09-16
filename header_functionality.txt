@@ -5,4 +5,4 @@ clicking edit button pops up modal
 to rename it.
 
 
-
+Slack/Jira/SIR fields will store urls. they should strip https:// form url, and store only display 16 char worth in the placeholder span but store the whole string. clicking this span will eventually integrate functionality for opening the link. in the meantime it should just create an alert saying "Placeholder: navigation to <url>."

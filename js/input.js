@@ -119,6 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
         closeModal();
     });
 
+    // Ctrl+C key to close
+    document.addEventListener('keydown', function(e) {
+        if ((e.key === 'c' && e.ctrlKey) && modalOverlay.style.display === 'flex') {
+            closeModal();
+        }
+    });
+
     // Update button
     modalOverlay.querySelector('.update-btn').addEventListener('click', function() {
         updateValue();
@@ -131,12 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Escape key to close
-    document.addEventListener('keydown', function(e) {
-        if ((e.key === 'c' && e.ctrlKey) && modalOverlay.style.display === 'flex') {
-            closeModal();
-        }
-    });
+ 
 
     console.log('Modal functionality initialized');
 });
