@@ -58,8 +58,8 @@ function getCurrentValue(target) {
         return textarea.value.trim();
     }
     
-    // Find the closest placeholder span - works for all editable fields
-    const placeholder = target.closest('.field-group, .timestamp-group, h1')?.querySelector('.placeholder');
+    // Find the closest placeholder span - works for all editable fields except header
+    const placeholder = target.closest('.field-group, .timestamp-group')?.querySelector('.placeholder');
     return placeholder ? placeholder.textContent.trim() : '';
 }
 
@@ -81,14 +81,9 @@ function updateValue() {
     }
 
     // Find the placeholder span and update it
-    const placeholder = currentTarget.closest('.field-group, .timestamp-group, h1')?.querySelector('.placeholder');
+    const placeholder = currentTarget.closest('.field-group, .timestamp-group')?.querySelector('.placeholder');
     if (placeholder) {
         placeholder.textContent = newValue;
-        
-        // If it's the header title, also update page title
-        if (currentTarget.classList.contains('header-edit-icon')) {
-            document.title = newValue;
-        }
     }
 
     closeModal();
@@ -99,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create modal
     createModal();
     
-    // Listen for clicks on edit icons
+    // Listen for clicks on edit icons (excluding header and inline-field icons)
     document.addEventListener('click', function(e) {
-        if (e.target.matches('.edit-icon, .header-edit-icon')) {
+        if (e.target.matches('.edit-icon') && !e.target.closest('.inline-fields-container')) {
             e.preventDefault();
             openModal(e.target);
         }
@@ -137,8 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
             updateValue();
         }
     });
-
- 
 
     console.log('Modal functionality initialized');
 });

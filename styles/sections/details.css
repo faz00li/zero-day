@@ -1,0 +1,133 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.timestamp-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timestamp-label {
+    font-weight: bold;
+}
+
+.timestamp {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    color: #666;
+}
+
+.inline-fields-container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.field-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 200px;
+    width: 100%;
+}
+
+.field-label {
+    font-weight: bold;
+    min-width: fit-content;
+}
+
+.field-value {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    color: #666;
+    position: relative;
+}
+
+/* URL field styling - make clickable fields look interactive */
+.field-value .placeholder[data-full-url] {
+    color: #007acc;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.field-value .placeholder[data-full-url]:hover {
+    color: #005a9e;
+    text-decoration: none;
+}
+
+.header {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* CVSS Range Slider Styling */
+#cvss-range-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#cvss-range-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#cvss-range {
+    --range-color: rgb(128, 128, 128); /* Default gray for zero value */
+    --track-background: rgb(200, 200, 200); /* Default gray track */
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--track-background);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Chrome/Safari slider thumb */
+#cvss-range::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--range-color);
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Firefox slider thumb */
+#cvss-range::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--range-color);
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Firefox slider track */
+#cvss-range::-moz-range-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--track-background);
+}
+
+#rangeOutput {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--range-color);
+    margin-top: 5px;
+    transition: color 0.2s ease;
+}
