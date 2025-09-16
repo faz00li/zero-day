@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Escape key to close
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
+        if ((e.key === 'c' && e.ctrlKey) && modalOverlay.style.display === 'flex') {
             closeModal();
         }
     });
