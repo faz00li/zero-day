@@ -1,7 +1,7 @@
-/* Custom CVSS Slider Implementation */
+/* Configurable Slider Implementation */
 
-/* CVSS Modal Styling */
-.cvss-modal-overlay {
+/* Slider Modal Styling */
+.slider-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@
     z-index: 1000;
 }
 
-.cvss-modal {
+.slider-modal {
     background: white;
     padding: 30px;
     border-radius: 8px;
@@ -23,18 +23,18 @@
     max-width: 500px;
 }
 
-.cvss-modal h3 {
+.slider-modal h3 {
     margin: 0 0 20px 0;
     font-size: 18px;
     color: #333;
 }
 
-/* Custom CVSS Slider Container */
-#cvss-slider-container {
+/* Generic Slider Container */
+#slider-container {
     margin: 20px 0;
 }
 
-#cvss-slider-container label {
+#slider-container label {
     display: block;
     margin-bottom: 15px;
     font-weight: bold;
@@ -91,7 +91,7 @@
 }
 
 /* Hidden Range Input (Handles Interaction) */
-#cvss-slider {
+#slider-input {
     position: absolute;
     top: 0;
     left: 0;
@@ -106,7 +106,7 @@
 }
 
 /* Value Output */
-#cvss-output {
+#slider-output {
     font-family: 'SF Mono', 'Consolas', monospace;
     font-size: 18px;
     font-weight: bold;
@@ -117,26 +117,26 @@
 }
 
 /* Remove default slider styling */
-#cvss-slider::-webkit-slider-thumb {
+#slider-input::-webkit-slider-thumb {
     appearance: none;
     -webkit-appearance: none;
 }
 
-#cvss-slider::-webkit-slider-track {
+#slider-input::-webkit-slider-track {
     appearance: none;
     -webkit-appearance: none;
 }
 
-#cvss-slider::-moz-range-thumb {
+#slider-input::-moz-range-thumb {
     border: none;
     background: transparent;
 }
 
-#cvss-slider::-moz-range-track {
+#slider-input::-moz-range-track {
     background: transparent;
 }
 
 /* Focus styles */
-#cvss-slider:focus {
+#slider-input:focus {
     outline: none;
 }
