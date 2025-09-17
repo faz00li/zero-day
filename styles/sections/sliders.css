@@ -1,7 +1,7 @@
 /* Custom CVSS Slider Implementation */
 
-/* Details Modal Styling */
-.details-modal-overlay {
+/* CVSS Modal Styling */
+.cvss-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@
     z-index: 1000;
 }
 
-.details-modal {
+.cvss-modal {
     background: white;
     padding: 30px;
     border-radius: 8px;
@@ -23,52 +23,10 @@
     max-width: 500px;
 }
 
-.details-modal h3 {
+.cvss-modal h3 {
     margin: 0 0 20px 0;
     font-size: 18px;
     color: #333;
-}
-
-.details-modal input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.details-modal-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-.details-modal button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.details-cancel-btn {
-    background: #6c757d;
-    color: white;
-}
-
-.details-cancel-btn:hover {
-    background: #5a6268;
-}
-
-.details-update-btn {
-    background: #007bff;
-    color: white;
-}
-
-.details-update-btn:hover {
-    background: #0056b3;
 }
 
 /* Custom CVSS Slider Container */
