@@ -22,34 +22,33 @@
     <link rel="stylesheet" href="styles/sections/4_assessment.css">
 </head>
 <body>
-    <!-- Submission title and status display -->
-    <header>
-        <div class="header-container">
-            <h1><span class="edit-icon header-edit-icon" title="Edit submission title">✎</span><span id="submission-title" class="placeholder">Remediate Now Submission</span> <span id="submission-status-display" class="submission-status">Triage</span></h1>
-        </div>
-    </header>
-
-    <section id="header" class="header">
-    <!-- Status update section -->
-    <section id="status-tracking" class="status-section">
-        <div class="status-header">
-            <h2>Update Status</h2>
-            <div class="status-bar">
-                <button class="status-button" data-status="triage">Triage</button>
-                <button class="status-button" data-status="monitor">Monitor</button>
-                <button class="status-button" data-status="remediate-now">Remediate Now</button>
-                <button class="status-button" data-status="de-escalated">De-Escalated</button>
-                <button class="status-button" data-status="remediated">Remediated</button>
-                <button class="status-button" data-status="de-escalated-critical">De-Escalated Critical</button>
-                <button class="status-button" data-status="closed">Closed</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Body of form -->
     
-        <h2>Submission Details</h2>
-        
+    <!-- Body of form -->
+    <section id="header" class="header">
+
+        <!-- Submission title and status display -->
+        <header>
+            <div class="header-container">
+                <h1><span class="edit-icon header-edit-icon" title="Edit submission title">✎</span><span id="submission-title" class="placeholder">Remediate Now Submission</span></h1>
+                <span id="submission-status-display" class="submission-status">Triage</span>
+            </div>
+        </header>
+
+        <!-- Status update section -->
+        <section id="status-tracking" class="status-section">
+            
+                <div class="status-bar">
+                    <button class="status-button" data-status="triage">Triage</button>
+                    <button class="status-button" data-status="monitor">Monitor</button>
+                    <button class="status-button" data-status="remediate-now">Remediate Now</button>
+                    <button class="status-button" data-status="de-escalated">De-Escalated</button>
+                    <button class="status-button" data-status="remediated">Remediated</button>
+                    <button class="status-button" data-status="de-escalated-critical">De-Escalated Critical</button>
+                    <button class="status-button" data-status="closed">Closed</button>
+                </div>
+            
+        </section>
+
         <!-- Timestamp section -->
         <div class="form-group timestamp-group">
             <!-- TODO: Implement database retreival if submission exists -->
