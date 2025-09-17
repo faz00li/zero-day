@@ -1,0 +1,71 @@
+/* Status bar, buttons, badge styles */
+
+/* Status color variables */
+:root {
+    --status-triage: #FFD700;              /* bright yellow (Gold) */
+    --status-monitor: #FF9800;             /* orange */
+    --status-de-escalated: #7CB342;        /* light green */
+    --status-de-escalated-critical: #9C27B0;/* purple */
+    --status-remediate-now: #F44336;       /* red */
+    --status-remediated: #2E7D32;          /* darker green */
+    --status-closed: #4B515D;              /* gray (unchanged) */
+}
+
+.status-section {
+    margin-bottom: 30px;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-header h2 {
+    margin: 0;
+    min-width: fit-content;
+}
+
+.status-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.status-button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.status-button:hover {
+    background-color: #f0f0f0;
+}
+
+.status-button.active {
+    background-color: #666666;
+    color: white;
+    border-color: #555555;
+    font-weight: bold;
+    transform: scale(1.02);
+}
+
+/* Submission status badge styling */
+.submission-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--status-triage); /* Default to triage color */
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.submission-status:hover {
+    transform: scale(1.05);
+}
