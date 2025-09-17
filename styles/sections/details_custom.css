@@ -1,0 +1,184 @@
+/* Custom CVSS Slider Implementation */
+
+/* Details Modal Styling */
+.details-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.details-modal {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.details-modal h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.details-modal input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.details-modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.details-modal button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.details-cancel-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.details-cancel-btn:hover {
+    background: #5a6268;
+}
+
+.details-update-btn {
+    background: #007bff;
+    color: white;
+}
+
+.details-update-btn:hover {
+    background: #0056b3;
+}
+
+/* Custom CVSS Slider Container */
+#cvss-slider-container {
+    margin: 20px 0;
+}
+
+#cvss-slider-container label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Custom Slider Wrapper */
+.custom-slider {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 20px 0;
+}
+
+/* Slider Track (Gray Background) */
+.slider-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: #c8c8c8;
+    border-radius: 4px;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+/* Slider Fill (Colored Portion) */
+.slider-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: rgb(128, 128, 128);
+    border-radius: 4px;
+    transition: background-color 0.2s ease, width 0.1s ease;
+}
+
+/* Slider Thumb (Draggable Circle) */
+.slider-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 20px;
+    height: 20px;
+    background: rgb(128, 128, 128);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease, left 0.1s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Hidden Range Input (Handles Interaction) */
+#cvss-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Value Output */
+#cvss-output {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(128, 128, 128);
+    margin-top: 10px;
+    transition: color 0.2s ease;
+}
+
+/* Remove default slider styling */
+#cvss-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#cvss-slider::-webkit-slider-track {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#cvss-slider::-moz-range-thumb {
+    border: none;
+    background: transparent;
+}
+
+#cvss-slider::-moz-range-track {
+    background: transparent;
+}
+
+/* Focus styles */
+#cvss-slider:focus {
+    outline: none;
+}

@@ -261,12 +261,10 @@ function updateRangeColor(rangeInput, value) {
     const percentage = value / 10;
     
     let thumbColor;
-    let trackBackground;
     
     if (value === 0) {
-        // Both gray at zero
+        // Gray at zero
         thumbColor = 'rgb(128, 128, 128)';
-        trackBackground = 'rgb(200, 200, 200)';
     } else {
         // Calculate thumb color based on position
         if (percentage <= 0.25) {
@@ -298,20 +296,13 @@ function updateRangeColor(rangeInput, value) {
             const blue = Math.round(102 - (102 * localPercentage));
             thumbColor = `rgb(${red}, ${green}, ${blue})`;
         }
-        
-        // Create simple track: gray to current color up to slider position, then gray
-        const currentPosition = percentage * 100;
-        trackBackground = `linear-gradient(to right, 
-            #c8c8c8 0%, 
-            ${thumbColor} ${currentPosition}%,
-            #c8c8c8 ${currentPosition}%,
-            #c8c8c8 100%
-        )`;
     }
     
-    // Apply colors to the range input
+    // Apply color to the range input
+    // For WebKit browsers, the box-shadow technique handles the track
+    // For Firefox, we still need to set the track background
     rangeInput.style.setProperty('--range-color', thumbColor);
-    rangeInput.style.setProperty('--track-background', trackBackground);
+    rangeInput.style.setProperty('--track-background', thumbColor);
 }
 
 // Update CVSS value only (for live slider updates without closing modal)
